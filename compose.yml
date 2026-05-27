@@ -4,8 +4,8 @@ services:
     image: ghcr.io/patridu/compose-demo_app
     build: .
     environment:
-      # This environment variable will be taken from the host
-      HOSTNAME: ${HOSTNAME}
+      # Environment variable will be taken from the host
+      - HOSTNAME
 
   redis-container:
     # Gets pinned to a specific release at publish time
