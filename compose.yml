@@ -5,7 +5,7 @@ services:
     build: .
     environment:
       # Environment variable will be taken from the host
-      - HOSTNAME
+      - TESTENV=${HOSTNAME}
 
   redis-container:
     # Gets pinned to a specific release at publish time
