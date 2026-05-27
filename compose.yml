@@ -1,0 +1,12 @@
+services:
+  redis-container:
+    # Gets pinned to a specific release at publish time
+    image: docker.io/valkey/valkey:latest
+    # Restarts after host reboots and failures
+    restart: on-failure:10
+    healthcheck:
+      test: '[ $$(valkey-cli ping) = ''PONG'' ]'
+      start_period: 5s
+      timeout: 3s
+      interval: 1s
+      retries: 5
