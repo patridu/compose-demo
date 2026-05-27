@@ -32,5 +32,6 @@ jobs:
 
       - name: Publish Compose artifact
         run: |
+          docker compose build
           docker compose publish --resolve-image-digests --yes ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           docker compose publish --resolve-image-digests --yes ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${GITHUB_SHA::7}

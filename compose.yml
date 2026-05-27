@@ -1,4 +1,9 @@
 services:
+  app-container:
+    # Builds and pushes the image
+    image: ghcr.io/patridu/compose-demo_app
+    build: .
+
   redis-container:
     # Gets pinned to a specific release at publish time
     image: docker.io/valkey/valkey:latest
