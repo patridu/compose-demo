@@ -6,7 +6,7 @@ services:
     # Restart after host reboots and failures
     restart: always
     environment:
-      # Environment variable will be taken from the host
+      # Will be taken from the host environment
       - NAME
 
   redis-container:
