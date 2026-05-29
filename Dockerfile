@@ -1,7 +1,7 @@
 FROM docker.io/alpine
 
 RUN echo $'\
-echo Hallo Welt von ${HOSTNAME}!\n\
+echo Gruesse an ${NAME}!\n\
 sleep infinity' >> /entrypoint.sh
 
 ENTRYPOINT ["/bin/sh", "/entrypoint.sh"]

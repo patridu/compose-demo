@@ -3,15 +3,16 @@ services:
     # Builds and pushes the image
     image: ghcr.io/patridu/compose-demo_app
     build: .
+    # Restart after host reboots and failures
+    restart: always
     environment:
       # Environment variable will be taken from the host
-      - TESTENV=${HOSTNAME}
+      - NAME
 
   redis-container:
     # Gets pinned to a specific release at publish time
     image: docker.io/valkey/valkey:latest
-    # Restarts after host reboots and failures
-    restart: unless-stopped
+    restart: always
     healthcheck:
       test: '[ $$(valkey-cli ping) = ''PONG'' ]'
       start_period: 5s
